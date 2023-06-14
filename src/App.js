@@ -5,7 +5,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
-import RegisterForm from "./components/RegisterForm";
+import Register from "./pages/Register";
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                 <Route path="/service" element={<Services />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contactUs" element={<ContactUs />} />
-                <Route path="/registerForm" element={<RegisterForm />} />
+                <Route path="/register" element={<Register />} />
             </Routes>
             <Footer />
         </div>

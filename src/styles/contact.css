@@ -1,5 +1,8 @@
-
 .contact-section {
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 80px;
     background-color: #fff;
     text-align: center;
