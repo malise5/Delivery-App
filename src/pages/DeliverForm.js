@@ -1,98 +1,111 @@
 import React, { useState } from "react";
-import "../styles/register.css";
+import "../styles/DeliveryForm.css";
+import { useNavigate } from "react-router-dom";
 
-const RegisterForm = () => {
+const DeliveryForm = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
+        senderName: "",
+        recipientName: "",
+        address: "",
+        contactNumber: "",
+        itemDescription: "",
     });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Perform registration logic here
+        // Perform form validation and submission logic here
         console.log(formData);
-        // Reset form
+        // // Store the form data in local storage
+        // localStorage.setItem("formData", JSON.stringify(formData));
+
+        const storedDeliveries = localStorage.getItem("deliveries");
+        const deliveries = storedDeliveries ? JSON.parse(storedDeliveries) : [];
+        const updatedDeliveries = [...deliveries, formData];
+        localStorage.setItem("deliveries", JSON.stringify(updatedDeliveries));
+
+        // Redirect to CargoStatus page along with the form data
+        navigate("/cargo-status", { state: formData });
+
+        // Reset the form
         setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: "",
-            confirmPassword: "",
+            senderName: "",
+            recipientName: "",
+            address: "",
+            contactNumber: "",
+            itemDescription: "",
         });
     };
 
     return (
-        <div className="register-container">
-            <h2>Register</h2>
-            <form className="register-form" onSubmit={handleSubmit}>
+        <div className="delivery-form-container">
+            <h2>Delivery Form</h2>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="firstName">First Name</label>
+                    <label htmlFor="senderName">Sender's Name</label>
                     <input
                         type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
+                        id="senderName"
+                        name="senderName"
+                        value={formData.senderName}
+                        onChange={handleInputChange}
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="lastName">Last Name</label>
+                    <label htmlFor="recipientName">Recipient's Name</label>
                     <input
                         type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
+                        id="recipientName"
+                        name="recipientName"
+                        value={formData.recipientName}
+                        onChange={handleInputChange}
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="address">Address</label>
+                    <textarea
+                        id="address"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleInputChange}
+                        required
+                    ></textarea>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="contactNumber">Contact Number</label>
                     <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        type="tel"
+                        id="contactNumber"
+                        name="contactNumber"
+                        value={formData.contactNumber}
+                        onChange={handleInputChange}
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="itemDescription">Item Description</label>
                     <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        type="text"
+                        id="itemDescription"
+                        name="itemDescription"
+                        value={formData.itemDescription}
+                        onChange={handleInputChange}
                         required
                     />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit" className="register-btn">
-                    Register
+                <button type="submit" className="submit-button">
+                    Submit
                 </button>
             </form>
         </div>
     );
 };
 
-export default RegisterForm;
+export default DeliveryForm;
