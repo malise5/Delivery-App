@@ -1,62 +1,10 @@
-// import React from "react";
-// import "../styles/login.css";
-
-// const Login = () => {
-//     return (
-//         <div className="sign-up">
-//             <div className="sign-header">
-//                 <h1>Login</h1>
-//                 <p>
-//                     Please complete the form below to access your account and
-//                     start using our platform
-//                 </p>
-//             </div>
-//             <form>
-//                 {/* <div className="input-group">
-//                     <label htmlFor="username">Username</label>
-//                     <input
-//                         id="username"
-//                         type="text"
-//                         placeholder="username..."
-//                     />
-//                 </div> */}
-//                 <div className="input-group">
-//                     <label htmlFor="email">Email</label>
-//                     <input
-//                         id="email"
-//                         type="email"
-//                         placeholder="Enter email..."
-//                     />
-//                 </div>
-//                 <div className="input-group">
-//                     <label htmlFor="password">Password</label>
-//                     <input
-//                         id="password"
-//                         type="password"
-//                         placeholder="create password.."
-//                     />
-//                 </div>
-//                 {/* <div className="input-group">
-//                     <label htmlFor="password2">Confirm Password</label>
-//                     <input
-//                         id="password2"
-//                         type="password2"
-//                         placeholder="confirm password..."
-//                     />
-//                 </div> */}
-//                 <button className="btn-in">Login</button>
-//             </form>
-//         </div>
-//     );
-// };
-
-// export default Login;
-
 import React, { useState } from "react";
 import "../styles/login.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate();
     const [loginData, setLoginData] = useState({
         email: "",
         password: "",
@@ -67,35 +15,6 @@ const Login = () => {
         const { name, value } = e.target;
         setLoginData((prevData) => ({ ...prevData, [name]: value }));
     };
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     // Perform form validation and submission logic here
-    //     const storedCredentials = JSON.parse(
-    //         localStorage.getItem("userCredentials")
-    //     );
-    //     if (
-    //         storedCredentials &&
-    //         storedCredentials.email === loginData.email &&
-    //         storedCredentials.password === loginData.password
-    //     ) {
-    //         //success login
-    //         console.log("Login Successful");
-    //         //clear the login form
-    //         setLoginData({
-    //             email: "",
-    //             password: "",
-    //         });
-    //     } else {
-    //         //failed login
-    //         console.log("Login Failed");
-    //         //clear the login form
-    //         setLoginData({
-    //             email: "",
-    //             password: "",
-    //         });
-    //     }
-    // };
     const handleSubmit = (e) => {
         e.preventDefault();
         try {
@@ -110,6 +29,7 @@ const Login = () => {
                 console.log("Login Successful");
                 setError(null);
                 // Clear the login form
+                navigate("/hero");
                 setLoginData({
                     email: "",
                     password: "",

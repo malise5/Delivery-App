@@ -1,59 +1,3 @@
-// import React from "react";
-// import "../styles/register.css";
-// import { useState } from "react";
-
-// const Register = () => {
-//     return (
-//         <div className="sign-up">
-//             <div className="sign-header">
-//                 <h1>Sign Up</h1>
-//                 <p>
-//                     Welcome to our delivery logistic app registration! Please
-//                     complete the form below to create your account and start
-//                     using our platform.
-//                 </p>
-//             </div>
-//             <form>
-//                 <div className="input-group">
-//                     <label htmlFor="username">Username</label>
-//                     <input
-//                         id="username"
-//                         type="text"
-//                         placeholder="username..."
-//                     />
-//                 </div>
-//                 <div className="input-group">
-//                     <label htmlFor="email">Email</label>
-//                     <input
-//                         id="email"
-//                         type="email"
-//                         placeholder="Enter email..."
-//                     />
-//                 </div>
-//                 <div className="input-group">
-//                     <label htmlFor="password">Password</label>
-//                     <input
-//                         id="password"
-//                         type="password"
-//                         placeholder="create password.."
-//                     />
-//                 </div>
-//                 <div className="input-group">
-//                     <label htmlFor="password2">Confirm Password</label>
-//                     <input
-//                         id="password2"
-//                         type="password2"
-//                         placeholder="confirm password..."
-//                     />
-//                 </div>
-//                 <button className="btn-in">Sign Up</button>
-//             </form>
-//         </div>
-//     );
-// };
-
-// export default Register;
-
 import React, { useState, useEffect } from "react";
 import "../styles/register.css";
 import { Link } from "react-router-dom";
@@ -65,7 +9,6 @@ const Register = () => {
         password: "",
         confirmPassword: "",
     });
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         localStorage.setItem("userCredentials", JSON.stringify(formData));
@@ -148,9 +91,7 @@ const Register = () => {
                     />
                 </div>
                 <button className="btn-in" type="submit">
-                    <Link to="/login" className="btn-in">
-                        Sign Up
-                    </Link>
+                    <Link to="/login">Sign Up</Link>
                 </button>
             </form>
             <Link to="/login" className="option">

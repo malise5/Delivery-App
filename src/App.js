@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import DeliveryForm from "./pages/DeliverForm";
 import CargoStatusPage from "./pages/CargoStatusPage";
+import Hero from "./pages/Hero";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/deliver" element={<DeliveryForm />} />
+                    <Route path="/hero" element={<Hero />} />
                     <Route path="/cargo-status" element={<CargoStatusPage />} />
                 </Routes>
             </div>
