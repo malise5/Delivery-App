@@ -44,7 +44,7 @@ const DeliveryForm = () => {
 
     return (
         <div className="delivery-form-container">
-            <h2>Delivery Form</h2>
+            <h2 className="h2">Delivery Form</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="senderName">Sender's Name</label>

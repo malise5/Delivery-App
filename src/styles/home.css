@@ -2,12 +2,14 @@
 
 .hero-section {
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7) url("../images/landing.jpg");
+    background: rgba(0, 0, 0, 0.7)
+        url("https://www.cloudsufi.com/wp-content/uploads/2023/03/vehicles-laptop-supply-chain-representation-2.jpg");
     background-size: cover;
     background-position: center;
     background-blend-mode: darken;
     padding: 100px;
     text-align: center;
+    text-decoration: none;
     color: white;
 }
 

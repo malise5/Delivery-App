@@ -6,11 +6,11 @@ const Testimonals = () => {
         <>
             <h1 className="text">testimonals</h1>
             <div className="figure-container">
-                <figure class="snip1390">
+                <figure className="snip1390">
                     <img
                         src="https://blog.hubspot.com/hubfs/Testimonial-lead-gen-1.jpg"
                         alt="profile-sample3"
-                        class="profile"
+                        className="profile"
                     />
                     <figcaption>
                         <h2>Eleanor Crisp</h2>
@@ -23,11 +23,11 @@ const Testimonals = () => {
                         </blockquote>
                     </figcaption>
                 </figure>
-                <figure class="snip1390">
+                <figure className="snip1390">
                     <img
                         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg"
                         alt="profile-sample3"
-                        class="profile"
+                        className="profile"
                     />
                     <figcaption>
                         <h2>Eleanor Crisp</h2>
@@ -42,11 +42,11 @@ const Testimonals = () => {
                     </figcaption>
                 </figure>
 
-                <figure class="snip1390 hover">
+                <figure className="snip1390 hover">
                     <img
                         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
                         alt="profile-sample5"
-                        class="profile"
+                        className="profile"
                     />
                     <figcaption>
                         <h2>Gordon Norman</h2>
@@ -61,11 +61,11 @@ const Testimonals = () => {
                         </blockquote>
                     </figcaption>
                 </figure>
-                <figure class="snip1390">
+                <figure className="snip1390">
                     <img
                         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg"
                         alt="profile-sample6"
-                        class="profile"
+                        className="profile"
                     />
                     <figcaption>
                         <h2>Sue Shei</h2>

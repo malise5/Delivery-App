@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
-        <div className="hero-section">
+        <div className="hero-section-2">
             <div className="hero-content">
                 <h1>Efficient Logistic Solutions</h1>
                 <p>

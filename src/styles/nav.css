@@ -17,6 +17,9 @@
     font-size: 1.3rem;
     margin-left: 5rem;
 }
+.brand-name h3 span {
+    color: lightseagreen;
+}
 .navigation-menu {
     margin-left: auto;
     margin-right: 5rem;
