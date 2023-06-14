@@ -57,22 +57,22 @@ const Footer = () => {
                     </p>
 
                     <div className="footer-icons">
-                        <a href="#">
+                        <a href="www.facebook.com">
                             <i className="fa fa-facebook">
                                 <CiFacebook size={30} />
                             </i>
                         </a>
-                        <a href="#">
+                        <a href="www.twitter.com">
                             <i className="fa fa-twitter">
                                 <CiTwitter size={30} />
                             </i>
                         </a>
-                        <a href="#">
+                        <a href="www.linkedIn.com">
                             <i className="fa fa-linkedin">
                                 <CiLinkedin size={30} />
                             </i>
                         </a>
-                        <a href="#">
+                        <a href="www.github.com">
                             <i className="fa fa-github">
                                 <BsGithub size={30} />
                             </i>
