@@ -2,10 +2,11 @@
 
 .cargo-status-container {
     max-width: 90%;
-    margin: 0 auto;
+    margin: 180px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -14,7 +15,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-bottom: 20px;
+    align-items: stretch;
+    margin-bottom: 24px;
 }
 .cargo-status-container h2 {
     margin-bottom: 20px;
@@ -26,7 +28,6 @@
 .cargo-details {
     display: flex;
     flex-direction: column;
-    width: 100%;
     max-width: 600px;
     margin-top: 20px;
     padding: 20px;

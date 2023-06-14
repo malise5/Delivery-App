@@ -74,7 +74,9 @@ const CargoStatusPage = () => {
                 ))}
             </div>
             <button>
-                <Link className="btn-status">Back To Delivery Form</Link>
+                <Link to="/deliver" className="btn-status">
+                    Back To Delivery Form
+                </Link>
             </button>
         </div>
     );
