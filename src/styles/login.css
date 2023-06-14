@@ -41,8 +41,6 @@ input {
     background-color: blue;
 }
 .option {
-    display: flex;
-    align-items: center;
     border: none;
-    text-align: center;
+    padding: 0.5rem;
 }
