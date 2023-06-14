@@ -41,6 +41,9 @@ input {
     color: white;
     background-color: blue;
 }
+.btn-link {
+    color: white;
+}
 .option {
     display: flex;
     align-items: center;

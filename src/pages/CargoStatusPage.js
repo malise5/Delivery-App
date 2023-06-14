@@ -5,14 +5,6 @@ import { Link } from "react-router-dom";
 const CargoStatusPage = () => {
     const [formData, setFormData] = useState(null);
 
-    // useEffect(() => {
-    //     // Retrieve the form data from local storage
-    //     const storedFormData = localStorage.getItem("formData");
-    //     if (storedFormData) {
-    //         const parsedFormData = JSON.parse(storedFormData);
-    //         setFormData(parsedFormData);
-    //     }
-    // }, []);
     useEffect(() => {
         // Retrieve the form data from local storage
         const storedFormData = localStorage.getItem("deliveries");
