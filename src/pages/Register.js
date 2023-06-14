@@ -90,7 +90,7 @@ const Register = () => {
                         onChange={handleInputChange}
                     />
                 </div>
-                <button className="btn-in" type="submit">
+                <button className="btn-in">
                     <Link className="btn-link" to="/login">
                         Sign Up
                     </Link>

@@ -14,7 +14,7 @@ const Hero = () => {
                 <p>Experience hassle-free shipping and reliable service,</p>
                 <h2>backed by our commitment to excellence.</h2>
                 <button className="cta-button">
-                    <Link to="/deliver" className="cta-button">
+                    <Link to="/deliver" className="cta-button-1">
                         Click to Deliver
                     </Link>
                 </button>
