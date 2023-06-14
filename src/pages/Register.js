@@ -54,7 +54,7 @@
 
 // export default Register;
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/register.css";
 import { Link } from "react-router-dom";
 
@@ -65,6 +65,11 @@ const Register = () => {
         password: "",
         confirmPassword: "",
     });
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        localStorage.setItem("userCredentials", JSON.stringify(formData));
+    }, [formData]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -74,6 +79,14 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Perform form validation and submission logic here
+        // localStorage.setItem("userCredentials", JSON.stringify(formData));
+        //RESET THE FORM
+        setFormData({
+            username: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+        });
     };
 
     return (
@@ -96,6 +109,7 @@ const Register = () => {
                         placeholder="username..."
                         value={formData.username}
                         onChange={handleInputChange}
+                        required
                     />
                 </div>
                 <div className="input-group">
@@ -107,6 +121,7 @@ const Register = () => {
                         placeholder="Enter email..."
                         value={formData.email}
                         onChange={handleInputChange}
+                        required
                     />
                 </div>
                 <div className="input-group">
@@ -118,6 +133,7 @@ const Register = () => {
                         placeholder="create password.."
                         value={formData.password}
                         onChange={handleInputChange}
+                        required
                     />
                 </div>
                 <div className="input-group">
@@ -132,7 +148,9 @@ const Register = () => {
                     />
                 </div>
                 <button className="btn-in" type="submit">
-                    Sign Up
+                    <Link to="/login" className="btn-in">
+                        Sign Up
+                    </Link>
                 </button>
             </form>
             <Link to="/login" className="option">

@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className="navigation">
             <Link to="/" className="brand-name">
-                ZaPP
+                SendY
             </Link>
 
             <div className="navigation-menu">

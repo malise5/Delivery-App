@@ -3,6 +3,7 @@ import "../styles/home.css";
 import { Link } from "react-router-dom";
 import { TbTruckDelivery, TbViewportWide } from "react-icons/tb";
 import { MdSupportAgent } from "react-icons/md";
+import Testimonals from "./Testimonals";
 
 const Home = () => {
     return (
@@ -11,6 +12,10 @@ const Home = () => {
                 <section id="hero" className="hero-section">
                     <div className="hero-text">
                         <h1>Delivering Goods and Items</h1>
+                        <p>
+                            We don't just deliver, we also pick, store, pack and
+                            offer payment processing
+                        </p>
                         <p>Efficient and Reliable Delivery Services</p>
                         <Link to="register" className="btn-primary">
                             Get Started
@@ -45,6 +50,7 @@ const Home = () => {
                     </div>
                 </section>
             </main>
+            <Testimonals />
         </div>
     );
 };

@@ -57,19 +57,76 @@ import "../styles/login.css";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    const [formData, setFormData] = useState({
+    const [loginData, setLoginData] = useState({
         email: "",
         password: "",
     });
+    const [error, setError] = useState(null);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        setLoginData((prevData) => ({ ...prevData, [name]: value }));
     };
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     // Perform form validation and submission logic here
+    //     const storedCredentials = JSON.parse(
+    //         localStorage.getItem("userCredentials")
+    //     );
+    //     if (
+    //         storedCredentials &&
+    //         storedCredentials.email === loginData.email &&
+    //         storedCredentials.password === loginData.password
+    //     ) {
+    //         //success login
+    //         console.log("Login Successful");
+    //         //clear the login form
+    //         setLoginData({
+    //             email: "",
+    //             password: "",
+    //         });
+    //     } else {
+    //         //failed login
+    //         console.log("Login Failed");
+    //         //clear the login form
+    //         setLoginData({
+    //             email: "",
+    //             password: "",
+    //         });
+    //     }
+    // };
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Perform form validation and submission logic here
+        try {
+            const storedCredentials = localStorage.getItem("userCredentials");
+            const parsedCredentials = JSON.parse(storedCredentials);
+            if (
+                parsedCredentials &&
+                parsedCredentials.email === loginData.email &&
+                parsedCredentials.password === loginData.password
+            ) {
+                // Successful login
+                console.log("Login Successful");
+                setError(null);
+                // Clear the login form
+                setLoginData({
+                    email: "",
+                    password: "",
+                });
+            } else {
+                // Failed login
+                console.log("Login Failed");
+                setError("Login Failed");
+                // Clear the login form
+                setLoginData({
+                    email: "",
+                    password: "",
+                });
+            }
+        } catch (error) {
+            console.error("Error parsing user credentials:", error);
+        }
     };
 
     return (
@@ -89,7 +146,7 @@ const Login = () => {
                         type="email"
                         name="email"
                         placeholder="Enter email..."
-                        value={formData.email}
+                        value={loginData.email}
                         onChange={handleInputChange}
                     />
                 </div>
@@ -100,10 +157,11 @@ const Login = () => {
                         type="password"
                         name="password"
                         placeholder="create password.."
-                        value={formData.password}
+                        value={loginData.password}
                         onChange={handleInputChange}
                     />
                 </div>
+                <h3 className="error">{error}</h3>
                 <button className="btn-in" type="submit">
                     Login
                 </button>
